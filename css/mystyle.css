@@ -2,6 +2,13 @@ header, div, nav{
     border:1px solid #333;
     height: 100px;
 }
+*{
+    font-family: arial;
+}
+a{
+    text-decoration: none;  /*移除超連結底線*/
+    color:#0069b0;
+}
 .top_info{
     min-height: 30px;
 }
@@ -10,6 +17,18 @@ header, div, nav{
 }
 .top_info .rigth{
     float: right;
+}
+.top_info .rigth ul{
+    margin:0;
+    padding:0;
+}
+.top_info .rigth ul li{
+    display: inline-block;
+}
+.top_info .rigth ul li.dot{
+    padding:0;
+    color:#999;
+    font-size:12px;
 }
 .middle_info .logo{
     float: left;
