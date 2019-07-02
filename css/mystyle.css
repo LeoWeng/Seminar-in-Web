@@ -24,8 +24,8 @@ a{
     display: inline-block;
 }
 .top_info .right ul.ul1 li:hover{
-    transition-delay: 2s;
-    border-bottom: 2px solid #0069b0;
+    transition: 1s;
+    border-bottom: 5px solid #0069b0;
 }
 .top_info .right ul.ul1 li.dot{
     padding:0;
@@ -103,4 +103,29 @@ a{
 .middle_info .contact .box_last{
     float: left;
     margin: 20px 0 0 0;
+}
+
+.clear{
+    clear:both;
+}
+
+nav{
+    padding:10px 0;
+}
+
+nav ul{
+    padding:0;
+    margin:0;
+}
+
+nav ul li{
+    padding:5px 10px 0 10px;
+    margin:0;
+    float:left;
+    list-style: none;
+}
+
+nav ul li:hover{
+    border-top: 2px solid #0069b0;
+    padding: 3px 10px 0 10px;
 }
