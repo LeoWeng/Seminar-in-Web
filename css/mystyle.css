@@ -1,0 +1,41 @@
+header, div, nav{
+    border:1px solid #333;
+    height: 100px;
+}
+.top_info{
+    min-height: 30px;
+}
+.top_info .left{
+    float:left;
+}
+.top_info .rigth{
+    float: right;
+}
+.middle_info .logo{
+    float: left;
+    margin: 22px 0 0 20px;
+}
+.middle_info .contact{
+    float: right;
+    width: 70%;
+}
+.middle_info .contact .box{
+    float: left;
+    width: 200px;
+}
+.middle_info .contact .box img{
+    margin-top:30px;
+    float:left;
+}
+.middle_info .contact .box div{
+    float:left;
+    margin: 10px 0 0 10px;
+}
+.middle_info .contact .box div h5{
+    padding: 10px 0;
+    margin: 0;
+}
+.middle_info .contact .box_last{
+    float: left;
+    margin: 10px 0 0 0;
+}
