@@ -1,5 +1,5 @@
 header, div, nav{
-    border:1px solid #333;
+    /* border:1px solid #333; */
     height: 100px;
 }
 *{
@@ -15,24 +15,62 @@ a{
 .top_info .left{
     float:left;
 }
-.top_info .rigth{
+.top_info .right{
     float: right;
 }
-.top_info .rigth ul{
+.top_info .right ul{
     margin:0;
     padding:0;
+    float: left;
 }
-.top_info .rigth ul li{
+.top_info .right ul li{
     display: inline-block;
 }
-.top_info .rigth ul li.dot{
+.top_info .right ul li.dot{
     padding:0;
     color:#999;
     font-size:12px;
 }
+
+
+.top_info .right ul.ul2>li{
+    float:left;
+    padding: 0 15px;
+    list-style: none;
+    position: relative;     /* */
+}
+
+.top_info .right ul.ul2>li ul{
+    display: none;
+}
+
+.top_info .right ul.ul2>li:hover ul{
+    display:block;
+    position:absolute;
+    left: 0;
+    z-index:10;
+    background:#fff;
+    width:70px;
+}
+.top_info .right ul.ul2>li:hover ul>li{
+    float: none;
+    display:block;
+    padding: 10px 15px;
+}
+.top_info .right ul.ul2 li ul li:hover{
+    background-color: #0069b0;
+}
+.top_info .right ul.ul2 li ul li:hover a{
+    color:#fff;
+}
+
 .middle_info .logo{
     float: left;
-    margin: 22px 0 0 20px;
+}
+.middle_info .logo h1{
+    -moz-box-shadow:4px rgba(20%,20%,40%,0.5);
+    -webkit-box-shadow:4px rgba(20%,20%,40%,0.5);
+    box-shadow:4px rgba(20%,20%,40%,0.5);
 }
 .middle_info .contact{
     float: right;
