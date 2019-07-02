@@ -161,3 +161,34 @@ nav ul li:hover span.bar{
 span.angle::after{
     content: "▽";
 }
+
+nav ul li ul{
+    display: none;
+    position: absolute;
+    background: #fff;
+    box-shadow: 3px 3px 5px #999;
+}
+
+nav ul li:hover ul{
+    display:block;
+}
+
+nav ul li ul li{
+    display: block;
+    float:none;
+    width:200px;
+}
+
+nav ul li ul li span.sub-angle::after{
+    float:right;
+    content: ">";
+}
+
+nav ul li ul li:hover{
+    background: #0069b0;
+    cursor: pointer;
+}
+
+nav ul li ul li:hover a{
+    color:#fff;
+}
