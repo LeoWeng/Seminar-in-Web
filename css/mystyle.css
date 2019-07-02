@@ -1,7 +1,4 @@
-header, div, nav{
-    /* border:1px solid #333; */
-    height: 100px;
-}
+
 *{
     font-family: arial;
 }
@@ -23,21 +20,28 @@ a{
     padding:0;
     float: left;
 }
-.top_info .right ul li{
+.top_info .right ul.ul1 li{
     display: inline-block;
 }
-.top_info .right ul li.dot{
+.top_info .right ul.ul1 li:hover{
+    transition-delay: 2s;
+    border-bottom: 2px solid #0069b0;
+}
+.top_info .right ul.ul1 li.dot{
     padding:0;
     color:#999;
     font-size:12px;
+    padding: 0 5px;
 }
-
+.top_info .right ul.ul1 li.dot:hover{
+    border: none;
+}
 
 .top_info .right ul.ul2>li{
     float:left;
     padding: 0 15px;
     list-style: none;
-    position: relative;     /* */
+    position: relative;     /*搭配absolute 可組合性使用*/
 }
 
 .top_info .right ul.ul2>li ul{
@@ -68,9 +72,9 @@ a{
     float: left;
 }
 .middle_info .logo h1{
-    -moz-box-shadow:4px rgba(20%,20%,40%,0.5);
-    -webkit-box-shadow:4px rgba(20%,20%,40%,0.5);
-    box-shadow:4px rgba(20%,20%,40%,0.5);
+    -moz-box-shadow:0 0 5px 5px rgba(20%,20%,40%,0.5);
+    -webkit-box-shadow:0 0 5px 5px rgba(20%,20%,40%,0.5);
+    box-shadow:0 0 5px 5px rgba(20%,20%,40%,0.5);
 }
 .middle_info .contact{
     float: right;
@@ -81,18 +85,22 @@ a{
     width: 200px;
 }
 .middle_info .contact .box img{
-    margin-top:30px;
+    margin-top:35px;
     float:left;
 }
 .middle_info .contact .box div{
     float:left;
-    margin: 10px 0 0 10px;
+    margin: 25px 0 0 10px;
 }
 .middle_info .contact .box div h5{
-    padding: 10px 0;
+    padding: 3px 0;
     margin: 0;
+    font-size: 12px;
+}
+.middle_info .contact .box div span{
+    font-size: 12px;
 }
 .middle_info .contact .box_last{
     float: left;
-    margin: 10px 0 0 0;
+    margin: 20px 0 0 0;
 }
