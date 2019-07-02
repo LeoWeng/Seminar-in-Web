@@ -141,7 +141,7 @@ nav ul li{
     position: relative;
 }
 
-nav ul li span{
+nav ul li span.bar{
     border-top:0px solid #0069b0;
     position: absolute;
     margin: 0 auto;
@@ -152,8 +152,12 @@ nav ul li span{
     height: 100%;
 }
 
-nav ul li:hover span{
+nav ul li:hover span.bar{
     width: 100%;
     border-top:2px solid #0069b0;
     transition:width 0.5s;
+}
+
+span.angle::after{
+    content: "▽";
 }
