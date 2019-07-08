@@ -17,6 +17,7 @@ window.onload=function(){
     var opacity=1;
     var tm = false;
     var tm2 = false;
+    var prevChk = false;
     var animateFunc=function(){
         var obj=document.querySelector(".banner > div:last-child > img:last-child");
         opacity-=0.02;
@@ -25,8 +26,11 @@ window.onload=function(){
             clearInterval(tm);      // tm 為要關閉的計數器ID
             tm=false;
             opacity=1;
-            var banner=document.querySelector(".banner > div:last-child");
-            banner.innerHTML="<img src='"+obj.src+"'>"+banner.innerHTML;
+            if(prevChk===false){
+                var banner=document.querySelector(".banner > div:last-child");
+                banner.innerHTML="<img src='"+obj.src+"'>"+banner.innerHTML;
+            }
+            prevChk=false;
             document.querySelector(".banner > div:last-child > img:last-child").remove();
             tm2=setTimeout(waitFunction,3000);
         }
@@ -38,6 +42,7 @@ window.onload=function(){
         }
     };
     document.querySelector(".banner > div .prev").onclick=function(){
+        prevChk=true;
         var img_tgl_curr=document.querySelector(".banner > div:last-child > img:last-child").cloneNode(true); //.cloneNode(true) 將把參數也製作成副本
         var img_tgl_prev=document.querySelector(".banner > div:last-child > img");
         document.querySelector(".banner > div:last-child > img:last-child").style.opacity=1;
