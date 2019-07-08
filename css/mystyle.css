@@ -94,9 +94,10 @@ a{
 .middle_info .contact{
     float: right;
     width: 70%;
+    text-align: right;
 }
 .middle_info .contact .box{
-    float: left;
+    float: right;
     width: 200px;
 }
 .middle_info .contact .box img{
@@ -116,7 +117,7 @@ a{
     font-size: 12px;
 }
 .middle_info .contact .box_last{
-    float: left;
+    float: right;
     margin: 20px 0 0 0;
 }
 
