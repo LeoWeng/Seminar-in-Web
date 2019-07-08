@@ -38,7 +38,13 @@ window.onload=function(){
         }
     };
     document.querySelector(".banner > div .prev").onclick=function(){
-
+        var img_tgl_curr=document.querySelector(".banner > div:last-child > img:last-child").cloneNode(true); //.cloneNode(true) 將把參數也製作成副本
+        var img_tgl_prev=document.querySelector(".banner > div:last-child > img");
+        document.querySelector(".banner > div:last-child > img:last-child").style.opacity=1;
+        document.querySelector(".banner > div:last-child").appendChild(img_tgl_prev);
+        document.querySelector(".banner > div:last-child").appendChild(img_tgl_curr);
+        waitFunction();
+        clearTimeout(tm2);
     };
     document.querySelector(".banner > div .next").onclick=function(){
         waitFunction();
