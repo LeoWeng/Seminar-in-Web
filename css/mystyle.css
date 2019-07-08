@@ -93,11 +93,13 @@ a{
 }
 .middle_info .contact{
     float: right;
-    width: 70%;
+    width: 83%;         /* 670/(670+130) % */
     text-align: right;
 }
 .middle_info .contact .box{
-    float: right;
+    float: right;       /* 亦可使用 display = inline-box 
+                            但所有被指定套用的元素內容 框線 留白 與 間距
+                            都與文字設定相同 因此不易調整*/
     width: 200px;
 }
 .middle_info .contact .box img{
