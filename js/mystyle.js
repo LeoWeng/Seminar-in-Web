@@ -25,7 +25,7 @@ window.onload=function(){
             clearInterval(tm);      // tm 為要關閉的計數器ID
             opacity=1;
             var banner=document.querySelector(".banner");
-            banner.innerHTML="<img ssec='"+obj.src+"'>"+banner.innerHTML;
+            banner.innerHTML="<img src='"+obj.src+"'>"+banner.innerHTML;
             document.querySelector(".banner img:last-child").remove();
             setTimeout(waitFunction,3000);
         }
