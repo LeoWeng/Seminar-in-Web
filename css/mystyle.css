@@ -223,3 +223,15 @@ nav>ul>li>ul>li>ul>li:hover{
 nav>ul>li>ul>li>ul>li:hover a{
     color: #fff;
 }
+
+.banner{
+    border: 1px solid red;
+    position: relative;
+}
+
+.banner img{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
