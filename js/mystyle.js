@@ -17,16 +17,16 @@ window.onload=function(){
     var opacity=1;
     var tm = false;
     var animateFunc=function(){
-        var obj=document.querySelector(".banner img:last-child");
+        var obj=document.querySelector(".banner > div:last-child > img:last-child");
         opacity-=0.02;
         obj.style.opacity=opacity;
         if(opacity<=0){
             console.log("animateFunc: tm="+tm);
             clearInterval(tm);      // tm 為要關閉的計數器ID
             opacity=1;
-            var banner=document.querySelector(".banner");
+            var banner=document.querySelector(".banner > div:last-child");
             banner.innerHTML="<img src='"+obj.src+"'>"+banner.innerHTML;
-            document.querySelector(".banner img:last-child").remove();
+            document.querySelector(".banner > div:last-child > img:last-child").remove();
             setTimeout(waitFunction,3000);
         }
     };

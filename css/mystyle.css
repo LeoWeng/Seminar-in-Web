@@ -235,3 +235,22 @@ nav>ul>li>ul>li>ul>li:hover a{
     top: 0;
     left: 0;
 }
+
+.banner button{
+    position: absolute;
+    top: 30vw;
+    z-index: 1;
+    font-size: 2em;
+    background: #fff;
+    color: #333333;
+    border: 0;
+}
+
+.banner .prev{
+    left:0;
+}
+
+.banner .next{
+    right: 0;
+}
+
