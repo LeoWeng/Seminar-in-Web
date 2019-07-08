@@ -32,13 +32,22 @@ window.onload=function(){
             }
             prevChk=false;
             document.querySelector(".banner > div:last-child > img:last-child").remove();
-            tm2=setTimeout(waitFunction,3000);
+            tm2=setInterval(waitFunction,30);
         }
     };
+    var width=0;
     var waitFunction=function(){
         //window.alert("xxx");
         if(tm==false){
-            tm=setInterval(animateFunc,10); // tm 得到animateFunc使用的計數器ID
+            var obj=document.querySelector("div.line");
+            width+=1;
+            obj.style.width=width+"%";
+            if(width>=100){
+                clearInterval(tm2);
+                tm2=false;
+                width=0;
+                tm=setInterval(animateFunc,10); // tm 得到animateFunc使用的計數器ID
+            }
         }
     };
     document.querySelector(".banner > div .prev").onclick=function(){
@@ -50,12 +59,12 @@ window.onload=function(){
             document.querySelector(".banner > div:last-child").appendChild(img_tgl_prev);
             document.querySelector(".banner > div:last-child").appendChild(img_tgl_curr);
             waitFunction();
-            clearTimeout(tm2);
+            //clearInterval(tm2);
         }
     };
     document.querySelector(".banner > div .next").onclick=function(){
         waitFunction();
-        clearTimeout(tm2);
+        //clearInterval(tm2);
     };
-    tm2=setTimeout(waitFunction,3000);
+    tm2=setInterval(waitFunction,30);
 };

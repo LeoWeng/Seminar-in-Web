@@ -225,7 +225,6 @@ nav>ul>li>ul>li>ul>li:hover a{
 }
 
 .banner{
-    border: 1px solid red;
     position: relative;
 }
 
@@ -254,3 +253,12 @@ nav>ul>li>ul>li>ul>li:hover a{
     right: 0;
 }
 
+div.line{
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #f00;
+    height: 10px;
+    width: 100%;
+    z-index: 1;
+}
