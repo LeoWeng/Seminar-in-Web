@@ -16,24 +16,33 @@ window.onload=function(){
    
     var opacity=1;
     var tm = false;
+    var tm2 = false;
     var animateFunc=function(){
         var obj=document.querySelector(".banner > div:last-child > img:last-child");
         opacity-=0.02;
         obj.style.opacity=opacity;
         if(opacity<=0){
-            console.log("animateFunc: tm="+tm);
             clearInterval(tm);      // tm 為要關閉的計數器ID
+            tm=false;
             opacity=1;
             var banner=document.querySelector(".banner > div:last-child");
             banner.innerHTML="<img src='"+obj.src+"'>"+banner.innerHTML;
             document.querySelector(".banner > div:last-child > img:last-child").remove();
-            setTimeout(waitFunction,3000);
+            tm2=setTimeout(waitFunction,3000);
         }
     };
     var waitFunction=function(){
         //window.alert("xxx");
-        tm=setInterval(animateFunc,100); // tm 得到animateFunc使用的計數器ID
-        console.log("waitFunc tm="+tm);
+        if(tm==false){
+            tm=setInterval(animateFunc,10); // tm 得到animateFunc使用的計數器ID
+        }
     };
-    setTimeout(waitFunction,3000);
+    document.querySelector(".banner > div .prev").onclick=function(){
+
+    };
+    document.querySelector(".banner > div .next").onclick=function(){
+        waitFunction();
+        clearTimeout(tm2);
+    };
+    tm2=setTimeout(waitFunction,3000);
 };
