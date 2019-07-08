@@ -1,10 +1,11 @@
 window.onload=function(){
+    /*
     window.alert(
-        /* innerHTML 可以取得或設定 HTML Code 中的元素
-            使用query selector 可抓取 {css class} {id} {此方法可辨識css選擇器}*/
+        // innerHTML 可以取得或設定 HTML Code 中的元素
+        //    使用query selector 可抓取 {css class} {id} {此方法可辨識css選擇器}
         document.querySelector(".banner").innerHTML 
     );
-
+    */
     /*
     setTimeout(); //timer:只會發生一次
     clearTimeout(); // clear counter
@@ -23,13 +24,16 @@ window.onload=function(){
             console.log("animateFunc: tm="+tm);
             clearInterval(tm);      // tm 為要關閉的計數器ID
             opacity=1;
-            window.alert("action stop now!");
+            var banner=document.querySelector(".banner");
+            banner.innerHTML="<img ssec='"+obj.src+"'>"+banner.innerHTML;
+            document.querySelector(".banner img:last-child").remove();
+            setTimeout(waitFunction,3000);
         }
     };
     var waitFunction=function(){
-        window.alert("xxx");
+        //window.alert("xxx");
         tm=setInterval(animateFunc,100); // tm 得到animateFunc使用的計數器ID
         console.log("waitFunc tm="+tm);
     };
-    setTimeout(waitFunction,5000);
+    setTimeout(waitFunction,3000);
 };
