@@ -18,6 +18,14 @@ window.onload=function(){
     var tm = false;
     var tm2 = false;
     var prevChk = false;
+
+    var animateTrgger=function(){
+        clearInterval(tm2);
+        tm2=false;
+        width=0;
+        tm=setInterval(animateFunc,10); // tm 得到animateFunc使用的計數器ID
+    };
+
     var animateFunc=function(){
         var obj=document.querySelector(".banner > div:last-child > img:last-child");
         opacity-=0.02;
@@ -43,10 +51,7 @@ window.onload=function(){
             width+=1;
             obj.style.width=width+"%";
             if(width>=100){
-                clearInterval(tm2);
-                tm2=false;
-                width=0;
-                tm=setInterval(animateFunc,10); // tm 得到animateFunc使用的計數器ID
+                animateTrgger();
             }
         }
     };
@@ -58,12 +63,12 @@ window.onload=function(){
             document.querySelector(".banner > div:last-child > img:last-child").style.opacity=1;
             document.querySelector(".banner > div:last-child").appendChild(img_tgl_prev);
             document.querySelector(".banner > div:last-child").appendChild(img_tgl_curr);
-            waitFunction();
+            animateTrgger();
             //clearInterval(tm2);
         }
     };
     document.querySelector(".banner > div .next").onclick=function(){
-        waitFunction();
+        animateTrgger();
         //clearInterval(tm2);
     };
     tm2=setInterval(waitFunction,30);
