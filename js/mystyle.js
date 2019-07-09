@@ -47,28 +47,43 @@ window.onload=function(){
     };
 
     var width=0;
-    var fontSize=10;
-    var height=10;
+    var scale=0.01;
+    // var fontSize=10;
+    // var height=10;
     var waitFunction=function(){
         //window.alert("xxx");
         var obj2=document.querySelector(".banner .title div:last-child");
-        if(fontSize<50){
-            fontSize+=5;
-            obj2.style.fontSize=fontSize+"px";
-        }
+        // if(fontSize<50){
+        //     fontSize+=5;
+        //     obj2.style.fontSize=fontSize+"px";
+        // }
         // if(height<60){
         //     height+=5;
         //     obj2.style.height=height+"px";
         // }
+        if(scale<1){
+            scale+=0.02;
+            obj2.style.display="block";
+            obj2.style.transform="scaleY("+scale+")";
+        }
         if(tm==false){
             var obj=document.querySelector("div.line");
             width+=1;
             obj.style.width=width+"%";
             if(width>=100){
                 animateTrgger();
+                scale=0;
+                /*
+                    找出  選擇器（.banner .title） 並在此位置插入一個片段規則：
+                        在 （.banner .title） 中的 （.banner .title div）的前一行加入 obj2 內容。
+                */
+                document.querySelector(".banner .title")
+                    .insertBefore(obj2,document.querySelector(".banner .title div"));
+                obj2.style.display="none";
             }
         }
     };
+
     document.querySelector(".banner > div .prev").onclick=function(){
         if(prevChk!=true || tm===false){
             prevChk=true;
@@ -78,11 +93,19 @@ window.onload=function(){
             document.querySelector(".banner > div:last-child").appendChild(img_tgl_prev);
             document.querySelector(".banner > div:last-child").appendChild(img_tgl_curr);
             animateTrgger();
+            var obj2=document.querySelector(".banner .title div:last-child");
+            document.querySelector(".banner .title")
+                .insertBefore(obj2,document.querySelector(".banner .title div"));
+            obj2.style.display="none";
             //clearInterval(tm2);
         }
     };
     document.querySelector(".banner > div .next").onclick=function(){
         animateTrgger();
+        var obj2=document.querySelector(".banner .title div:last-child");
+        document.querySelector(".banner .title")
+            .insertBefore(obj2,document.querySelector(".banner .title div"));
+        obj2.style.display="none";
         //clearInterval(tm2);
     };
     tm2=setInterval(waitFunction,30);
