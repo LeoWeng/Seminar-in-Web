@@ -20,10 +20,12 @@ window.onload=function(){
     var prevChk = false;
 
     var animateTrgger=function(){
-        clearInterval(tm2);
-        tm2=false;
-        width=0;
-        tm=setInterval(animateFunc,10); // tm 得到animateFunc使用的計數器ID
+        if(tm==false){
+            clearInterval(tm2);
+            tm2=false;
+            width=0;
+            tm=setInterval(animateFunc,10); // tm 得到animateFunc使用的計數器ID
+        }
     };
 
     var animateFunc=function(){
