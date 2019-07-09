@@ -275,3 +275,11 @@ div.line{
     color: #fff;
     z-index: 5;
 }
+
+.banner .title div:not(:last-child){
+    display: none;
+}
+
+.banner .title div:last-child{
+    overflow: hidden;
+}

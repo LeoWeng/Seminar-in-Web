@@ -45,9 +45,21 @@ window.onload=function(){
             tm2=setInterval(waitFunction,30);
         }
     };
+
     var width=0;
+    var fontSize=10;
+    var height=10;
     var waitFunction=function(){
         //window.alert("xxx");
+        var obj2=document.querySelector(".banner .title div:last-child");
+        if(fontSize<50){
+            fontSize+=5;
+            obj2.style.fontSize=fontSize+"px";
+        }
+        // if(height<60){
+        //     height+=5;
+        //     obj2.style.height=height+"px";
+        // }
         if(tm==false){
             var obj=document.querySelector("div.line");
             width+=1;
