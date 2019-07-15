@@ -298,7 +298,24 @@ div.line{
 
 .info .info1{
     float:left;
-    width:25%;
+    width: calc( 25% - 40px );
+    padding: 10px 20px;
     background: #ccc;
     height: 300px;
+    text-align: center;
+}
+
+.info img{
+    width: 70%;
+}
+
+.info .info1 h5 {
+    font-size: 15px;
+    padding: 10px 0 5px 0;
+    margin: 0;
+}
+
+.info .info1 p{
+    font-size: 13px;
+    line-height: 1.6;
 }
