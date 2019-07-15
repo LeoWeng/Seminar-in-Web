@@ -128,7 +128,13 @@ a{
 }
 
 nav{
-    padding:10px 0;
+    padding:20px 0;
+    left:0;
+    right: 0;
+    top: 0;
+    z-index: 20;
+    background: #fff;
+    position: static;
 }
 
 nav ul{

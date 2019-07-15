@@ -84,6 +84,18 @@ window.onload=function(){
         }
     };
 
+    var navT=function(){
+        var nav=document.querySelector("nav");
+        if(document.querySelector("html").scrollTop>118){
+            nav.style.position="fixed";
+        }
+        else{
+            nav.style.position="static";
+        }
+    };
+
+    setInterval(navT,100);
+
     document.querySelector(".banner > div .prev").onclick=function(){
         if(prevChk!=true || tm===false){
             prevChk=true;
