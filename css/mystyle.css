@@ -301,7 +301,6 @@ div.line{
     width: calc( 25% - 40px );
     padding: 10px 20px;
     background: #ccc;
-    height: 300px;
     text-align: center;
 }
 
@@ -318,4 +317,52 @@ div.line{
 .info .info1 p{
     font-size: 13px;
     line-height: 1.6;
+}
+
+.info .info2{
+    float: left;
+    width: calc( 60% - 70px );
+    padding: 0 50px 0 20px;
+    margin: 20px 0 0 0 ;
+    box-sizing: border-box;
+}
+
+.info .info2 h4{
+    font-size: 20px;
+    line-height: 20px;
+    padding: 0 0 10px 0;
+    margin: 0;
+}
+
+.info .info2 .line_sub{
+    border: 1px solid #66f;
+    width: 15%;
+}
+
+.info .info2 .p1{
+    font-size: 17px;
+}
+
+.info .info2 ul{
+    list-style-image: url('../image/car.png');
+    padding: 0 0 0 20px;
+    margin: 0;
+}
+
+.info .info2 li{
+    padding: 0 0 10px 0;
+    margin: 0;
+    line-height: 1;
+}
+
+.info .info3{
+    float: left;
+    width: calc( 40% - 40px );
+    padding: 0 20px;
+    margin: 20px 0 0 0 ;
+    box-sizing: border-box;
+}
+
+.info .info3 img{
+    width:100%;
 }
