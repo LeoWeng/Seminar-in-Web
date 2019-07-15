@@ -290,3 +290,15 @@ div.line{
     transform: scaleY(0);
     transform-origin: bottom;
 }
+
+.banner{
+    position: relative;
+    height: 70vw;
+}
+
+.info .info1{
+    float:left;
+    width:25%;
+    background: #ccc;
+    height: 300px;
+}
