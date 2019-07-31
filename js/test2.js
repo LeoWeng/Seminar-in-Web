@@ -41,7 +41,7 @@ window.onload=function(){
             if(i==(obj_about1.length-1)&&right!=0){
                 obj_about1[i].style.left=(-right)+"px";
             }
-            else{
+            else if(right==0){
                 obj_about1[i].style.left=(500*i)+"px";
             }    
             console.log("init[about1("+i+")]"+obj_about1[i].style.left);
@@ -56,6 +56,7 @@ window.onload=function(){
     }
     var m=false;
     var mouseX=0,mouseX_now=0;
+    var currView=1;
 
     var leftAbout=function(){
         var obj=document.querySelectorAll(".about > .about1");
@@ -66,6 +67,10 @@ window.onload=function(){
         if(obj[1].offsetLeft<=0){
             document.querySelector(".about").appendChild(document.querySelector(".about > .about1"));
             init(0);
+            currView+=1;
+            if(currView>=4){
+                currView=1;
+            }
         }
         else{
             setTimeout(leftAbout,50);
@@ -86,15 +91,25 @@ window.onload=function(){
             for(var i=0;i<obj.length;i++){
                 console.log("right-step2[about1("+i+")]"+obj[i].style.left);
             }
-            setTimeout(rightAbout,50);
         }
-        else if(obj[0].offsetLeft==0){
-            return
+        if(obj[0].offsetLeft==0){
+            init(0);
+            currView-=1;
+            if(currView<=0){
+                currView=3;
+            }
         }
         else{
             setTimeout(rightAbout,50);
         }
     };
+    setInterval(function(){
+        var obj=document.querySelectorAll(".about_dot > span");
+        for(var i=0;i<obj.length;i++){
+            obj[i].setAttribute("class","");
+        }
+        document.querySelectorAll(".about_dot > span")[currView-1].setAttribute("class","current");
+    },100);
     obj_about.onmousedown=function(ev){
         mouseX=ev.clientX;
         console.log("A");

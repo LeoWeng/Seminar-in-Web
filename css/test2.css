@@ -118,3 +118,19 @@
     position: absolute;
     top: 0;
 }
+
+.about_dot{
+    text-align: center;
+}
+
+.about_dot span{
+    border-radius: 50%;
+    background: #aaa;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+}
+
+.about_dot span.current{
+    background: #33f;
+}
