@@ -136,7 +136,25 @@ window.onload=function(){
     }
     function dotClick(obj,t){
         obj.onclick=function(){
+            var dot_shift=(t+1)-currView;
             console.log("dot click on No."+t);
+            console.log("dot click  shift index:"+dot_shift);
+            if(dot_shift>0){
+                if(dot_shift==2){
+                    rightAbout();
+                }
+                else{
+                    leftAbout();
+                }
+            }
+            else{
+                if(dot_shift==-2){
+                    leftAbout();
+                }
+                else{
+                    rightAbout();
+                }
+            }
         };
     }
     var dotAll=document.querySelectorAll(".about_dot > span");
