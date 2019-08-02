@@ -43,8 +43,7 @@ window.onload=function(){
             }
             else if(right==0){
                 obj_about1[i].style.left=(500*i)+"px";
-            }    
-            // console.log("init[about1("+i+")]"+obj_about1[i].style.left);
+            }
         }
     };
 
@@ -62,7 +61,6 @@ window.onload=function(){
         var obj=document.querySelectorAll(".about > .about1");
         for(var i=0;i<obj.length;i++){
             obj[i].style.left=(obj[i].offsetLeft-50)+"px";
-            // console.log("left[about1("+i+")]"+obj[i].style.left);
         }
         if(obj[1].offsetLeft<=0){
             document.querySelector(".about").appendChild(document.querySelector(".about > .about1"));
@@ -80,7 +78,6 @@ window.onload=function(){
         var obj=document.querySelectorAll(".about > .about1");
         for(var i=0;i<obj.length;i++){
             obj[i].style.left=(obj[i].offsetLeft+50)+"px";
-            // console.log("right-step1[about1("+i+")]"+obj[i].style.left);
         }
         if(obj[0].offsetLeft==50){
             init(450);
@@ -88,9 +85,6 @@ window.onload=function(){
                 document.querySelector(".about > .about1:last-child"),
                 document.querySelector(".about > .about1"));
             obj=document.querySelectorAll(".about > .about1");
-            // for(var i=0;i<obj.length;i++){
-            //     console.log("right-step2[about1("+i+")]"+obj[i].style.left);
-            // }
         }
         if(obj[0].offsetLeft==0){
             init(0);
@@ -112,25 +106,22 @@ window.onload=function(){
     },100);
     obj_about.onmousedown=function(ev){
         mouseX=ev.clientX;
-        console.log("A");
         m=true;
     };
     obj_about.onmousemove=function(ev){
         if(m==true){
-            console.log("B");
             mouseX_now=ev.clientX-mouseX;
             console.log("move from point: "+mouseX_now);
         }
     };
     obj_about.onmouseup=function(){
-        console.log("C");
         m=false;
         if(mouseX_now>0){
-            console.log("Rigth side");
+            console.log("Rigth to Left");
             rightAbout();
         }
         else if(mouseX_now<0){
-            console.log("Left side");
+            console.log("Left to Right");
             leftAbout();
         }
     }
@@ -158,14 +149,6 @@ window.onload=function(){
                     }
                 }
             }
-
-            // if((dot_shift>0 && dot_shift==(maxt-1)) ||
-            //     (dot_shift<=0 && dot_shift!=-(maxt-1))){
-            //     rightAbout();
-            // }
-            // else{
-            //     leftAbout();
-            // }
         };
     }
     var dotAll=document.querySelectorAll(".about_dot > span");
