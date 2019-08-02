@@ -134,6 +134,15 @@ window.onload=function(){
             leftAbout();
         }
     }
+    function dotClick(obj,t){
+        obj.onclick=function(){
+            console.log("dot click on No."+t);
+        };
+    }
+    var dotAll=document.querySelectorAll(".about_dot > span");
+    for(var t=0;t<dotAll.length;t++){
+        dotClick(dotAll[t],t);
+    }
 };
 
 /*
