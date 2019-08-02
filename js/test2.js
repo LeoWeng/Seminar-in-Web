@@ -44,7 +44,7 @@ window.onload=function(){
             else if(right==0){
                 obj_about1[i].style.left=(500*i)+"px";
             }    
-            console.log("init[about1("+i+")]"+obj_about1[i].style.left);
+            // console.log("init[about1("+i+")]"+obj_about1[i].style.left);
         }
     };
 
@@ -52,7 +52,7 @@ window.onload=function(){
     
     var obj_about=document.querySelector(".about");
     for(var k in obj_about){
-        console.log(k+"=>"+obj_about[k]);
+        // console.log(k+"=>"+obj_about[k]);
     }
     var m=false;
     var mouseX=0,mouseX_now=0;
@@ -62,13 +62,13 @@ window.onload=function(){
         var obj=document.querySelectorAll(".about > .about1");
         for(var i=0;i<obj.length;i++){
             obj[i].style.left=(obj[i].offsetLeft-50)+"px";
-            console.log("left[about1("+i+")]"+obj[i].style.left);
+            // console.log("left[about1("+i+")]"+obj[i].style.left);
         }
         if(obj[1].offsetLeft<=0){
             document.querySelector(".about").appendChild(document.querySelector(".about > .about1"));
             init(0);
             currView+=1;
-            if(currView>=4){
+            if(currView>obj.length){
                 currView=1;
             }
         }
@@ -80,7 +80,7 @@ window.onload=function(){
         var obj=document.querySelectorAll(".about > .about1");
         for(var i=0;i<obj.length;i++){
             obj[i].style.left=(obj[i].offsetLeft+50)+"px";
-            console.log("right-step1[about1("+i+")]"+obj[i].style.left);
+            // console.log("right-step1[about1("+i+")]"+obj[i].style.left);
         }
         if(obj[0].offsetLeft==50){
             init(450);
@@ -88,15 +88,15 @@ window.onload=function(){
                 document.querySelector(".about > .about1:last-child"),
                 document.querySelector(".about > .about1"));
             obj=document.querySelectorAll(".about > .about1");
-            for(var i=0;i<obj.length;i++){
-                console.log("right-step2[about1("+i+")]"+obj[i].style.left);
-            }
+            // for(var i=0;i<obj.length;i++){
+            //     console.log("right-step2[about1("+i+")]"+obj[i].style.left);
+            // }
         }
         if(obj[0].offsetLeft==0){
             init(0);
             currView-=1;
             if(currView<=0){
-                currView=3;
+                currView=obj.length;
             }
         }
         else{
@@ -134,23 +134,43 @@ window.onload=function(){
             leftAbout();
         }
     }
-    function dotClick(obj,t){
+    function dotClick(obj,t,maxt){
         obj.onclick=function(){
             var dot_shift=(t+1)-currView;
-            console.log("dot click on No."+t);
-            console.log("dot click  shift index:"+dot_shift);
-            if((dot_shift>0 && dot_shift==2) ||
-                (dot_shift<=0 && dot_shift!=-2)){
+            console.log("dot current:"+currView);
+            console.log("dot click on No."+(t+1));
+            console.log("dot click shift index:"+dot_shift);
+            if(dot_shift==(maxt-1)){
                 rightAbout();
             }
-            else{
+            else if(dot_shift==(1-maxt)){
                 leftAbout();
             }
+            else{
+                if(dot_shift>0){
+                    for(var times=dot_shift;times!=0;times--){
+                        leftAbout();
+                    }
+                }
+                else{
+                    for(var times=-dot_shift;times!=0;times--){
+                        rightAbout();
+                    }
+                }
+            }
+
+            // if((dot_shift>0 && dot_shift==(maxt-1)) ||
+            //     (dot_shift<=0 && dot_shift!=-(maxt-1))){
+            //     rightAbout();
+            // }
+            // else{
+            //     leftAbout();
+            // }
         };
     }
     var dotAll=document.querySelectorAll(".about_dot > span");
     for(var t=0;t<dotAll.length;t++){
-        dotClick(dotAll[t],t);
+        dotClick(dotAll[t],t,dotAll.length);
     }
 };
 
