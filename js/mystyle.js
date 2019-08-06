@@ -1,4 +1,4 @@
-window.onload=function(){
+var mystyle=function(){
     /*
     window.alert(
         // innerHTML 可以取得或設定 HTML Code 中的元素
@@ -18,7 +18,7 @@ window.onload=function(){
     var tm = false;
     var tm2 = false;
     var prevChk = false;
-
+    console.log("mystyle.js loading");
     var animateTrgger=function(){
         if(tm==false){
             clearInterval(tm2);
@@ -86,15 +86,27 @@ window.onload=function(){
 
     var navT=function(){
         var nav=document.querySelector("nav");
+        var butTop=document.querySelector(".but_top");
         if(document.querySelector("html").scrollTop>118){
             nav.style.position="fixed";
+            butTop.style.display="inline-block";
         }
         else{
             nav.style.position="static";
+            butTop.style.display="none";
         }
     };
 
     setInterval(navT,100);
+    var scrollTopZero=function(){
+        document.querySelector("html").scrollTop-=100;
+        if(document.querySelector("html").scrollTop>0){
+            setTimeout(scrollTopZero,20);
+        }
+    };
+    document.querySelector(".but_top").onclick=function(){
+        scrollTopZero();
+    };
 
     document.querySelector(".banner > div .prev").onclick=function(){
         if(prevChk!=true || tm===false){

@@ -30,7 +30,7 @@ function objClick(obj,i){
         p=i;
     };
 }
-window.onload=function(){
+var test2=function(){
     var obj=document.querySelectorAll(".box ul > li"); //抓所有吻合的物件
     for(var i=0;i<obj.length;i++){
         objClick(obj[i],i);
@@ -143,7 +143,7 @@ window.onload=function(){
                         leftAbout();
                     }
                 }
-                else{
+                else if(dot_shift<0){
                     for(var times=-dot_shift;times!=0;times--){
                         rightAbout();
                     }

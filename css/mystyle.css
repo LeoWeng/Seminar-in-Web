@@ -1,6 +1,8 @@
 
 *{
     font-family: arial;
+    padding: 0;
+    margin: 0;
 }
 a{
     text-decoration: none;  /*移除超連結底線*/
@@ -125,6 +127,10 @@ a{
 
 .clear{
     clear:both;
+}
+
+nav.mobile{
+    display: none;
 }
 
 nav{
@@ -345,8 +351,10 @@ div.line{
     width: 15%;
 }
 
-.info .info2 .p1{
+.info .info2 .p1,
+.info .info2 .p2{
     font-size: 17px;
+    margin: 10px 0;
 }
 
 .info .info2 ul{

@@ -1,0 +1,69 @@
+.box{
+    width: 400px;
+}
+.info .info2{
+    width: 100%;
+    margin: 50px 0;
+}
+.info .info3{
+    width: 100%;
+    margin: 50px 0;
+}
+.middle_info .logo{
+    float: none;
+    width: 100%;
+    text-align: center;
+}
+.middle_info .contact{
+    width: 100%;
+    float: 0;
+    text-align: center;
+}
+.middle_info .contact .box{
+    width: calc(100% / 3);
+}
+.middle_info .contact .box_last{
+    float: none;
+}
+nav{
+    display: none;
+    
+}
+
+nav.mobile{
+    display: block;
+}
+nav.mobile{
+    background: #fff;
+    padding: 10px 5px;
+    border-bottom: 1px solid #aaa;
+}
+nav.mobile>div button{
+    float: right;
+    background: #fff;
+    border: 0;
+    font-size: 40px;
+}
+
+nav.mobile>div ul{
+    display: none;
+    background: #fff;
+    list-style: none;
+}
+
+nav.mobile>div:hover>ul{
+    display: block;
+}
+
+nav.mobile>div:hover>ul>li{
+    padding: 10px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+nav.mobile>div:hover>ul>li:hover>ul{
+    display: block;
+}
+
+nav.mobile>div:hover>ul>li:hover>ul>li{
+    padding: 10px 20px;
+}
